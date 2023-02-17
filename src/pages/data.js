@@ -8,7 +8,6 @@ const database = [
     "Python_Junior_count": -1,
     "Comp_count": 0
   },
-
   {
     "id": 2,
     "question": "Тебе больше 10 лет?",
@@ -18,7 +17,6 @@ const database = [
     "Python_Junior_count": -4,
     "Comp_count": -2
   },
-
   {
     "id": 3,
     "question": "Тебе нравиться рисовать?",
@@ -28,7 +26,6 @@ const database = [
     "Python_Junior_count": -1,
     "Comp_count": 0
   },
-
   {
     "id": 4,
     "question": "Тебе нравиться решать задачи?",
@@ -38,7 +35,6 @@ const database = [
     "Python_Junior_count": 4,
     "Comp_count": 1
   },
-
   {
     "id": 5,
     "question": "Тебе нравиться играть в Minecraft?",
@@ -48,7 +44,6 @@ const database = [
     "Python_Junior_count": -5,
     "Comp_count": 0
   },
-
   {
     "id": 6,
     "question": "Ты хорошо знаешь английский язык?",
@@ -58,7 +53,6 @@ const database = [
     "Python_Junior_count": 4,
     "Comp_count": 0
   },
-
   {
     "id": 7,
     "question": "Ты хочешь учиться быстрее и сложнее?",
@@ -68,7 +62,6 @@ const database = [
     "Python_Junior_count": 5,
     "Comp_count": 0
   },
-
   {
     "id": 8,
     "question": "Твой компьютер или ноутбук мощные?",
@@ -78,7 +71,6 @@ const database = [
     "Python_Junior_count": 0,
     "Comp_count": -3
   },
-
   {
     "id": 9,
     "question": "Ты хочешь учиться вместе с друзьями?",
@@ -88,7 +80,6 @@ const database = [
     "Python_Junior_count": -2,
     "Comp_count": 0
   },
-
   {
     "id": 10,
     "question": "Ты хорошо разбираешься в компьютере?",
@@ -98,7 +89,6 @@ const database = [
     "Python_Junior_count": 2,
     "Comp_count": -8
   },
-
   {
     "id": 11,
     "question": "Ты хочешь создавать сайты?",
@@ -108,7 +98,6 @@ const database = [
     "Python_Junior_count": 4,
     "Comp_count": 0
   },
-
   {
     "id": 12,
     "question": "Ты хочешь создавать игры?",
@@ -118,7 +107,6 @@ const database = [
     "Python_Junior_count": -4,
     "Comp_count": 0
   },
-
   {
     "id": 13,
     "question": "Процессор и системный блок это одно и тоже?",
@@ -128,7 +116,6 @@ const database = [
     "Python_Junior_count": -3,
     "Comp_count": 10
   },
-
   {
     "id": 14,
     "question": "Ты пользуешься активно Telegram?",
@@ -137,22 +124,7 @@ const database = [
     "Scratch_count": -2,
     "Python_Junior_count": 3,
     "Comp_count": -4
-  },
-
-  {
-    "id": 15,
-    "question": "Ты хочешь чтобы тебе было легче учиться?",
-    "Python_Start_count": 8,
-    "Game_Dev_count": 4,
-    "Scratch_count": 2,
-    "Python_Junior_count": -8,
-    "Comp_count": 4
-  },
-
-
-
-
-
+  }
 ]
 
 export default database

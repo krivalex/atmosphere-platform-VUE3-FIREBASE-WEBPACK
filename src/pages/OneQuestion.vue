@@ -2,7 +2,7 @@
   <div class="question">
     <div class="content">
       <div class="question-number">
-        <h1 id="number">{{ this.number_of_question }} / 15</h1>
+        <h1 id="number">{{ this.number_of_question }} / 14</h1>
         <h1>{{ this.question }}</h1>
         <div class="container">
           <svg viewBox="0 0 960 300">
@@ -50,18 +50,16 @@ export default {
       result: ''
     }
   },
-  components: {
-  },
   methods: {
     clickYes() {
-      if (this.number_of_question < database.length) {
+      if (this.number_of_question < database.length - 1) {
         console.log('clickYes');
 
         this.python_start += database[this.number_of_question].Python_Start_count
         this.python_junior += database[this.number_of_question].Python_Junior_count
         this.scratch += database[this.number_of_question].Scratch_count
-        this.gamedev += database[this.number_of_question].Game_Dev_count
-        this.comp_science += database[this.number_of_question].Comp_count
+        // this.gamedev += database[this.number_of_question].Game_Dev_count
+        // this.comp_science += database[this.number_of_question].Comp_count
 
         console.log("Python-Start: " + String(this.python_start))
         console.log("Python-Junior: " + String(this.python_junior))
@@ -89,8 +87,8 @@ export default {
         this.python_start -= database[this.number_of_question].Python_Start_count
         this.python_junior -= database[this.number_of_question].Python_Junior_count
         this.scratch -= database[this.number_of_question].Scratch_count
-        this.gamedev -= database[this.number_of_question].Game_Dev_count
-        this.comp_science -= database[this.number_of_question].Comp_count
+        // this.gamedev -= database[this.number_of_question].Game_Dev_count
+        // this.comp_science -= database[this.number_of_question].Comp_count
 
         console.log("Python-Start: " + String(this.python_start))
         console.log("Python-Junior: " + String(this.python_junior))

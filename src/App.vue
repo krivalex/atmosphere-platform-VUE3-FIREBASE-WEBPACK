@@ -7,7 +7,6 @@
 </template>
 
 <script>
-
 import OneQuestion from './pages/OneQuestion.vue'
 import mainNavbar from './layouts/mainNavbar.vue';
 import mainFooter from './layouts/mainFooter.vue';
@@ -20,9 +19,4 @@ export default {
     mainFooter
   }
 }
-
 </script>
-
-<style>
-
-</style>
