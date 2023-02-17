@@ -1,7 +1,7 @@
 const database = [
   {
     "id": 1,
-    "question": "Тебе нравиться играть в игры?",
+    "question": "Тебе нравится играть в игры?",
     "Python_Start_count": 1,
     "Game_Dev_count": 2,
     "Scratch_count": 1,
@@ -19,7 +19,7 @@ const database = [
   },
   {
     "id": 3,
-    "question": "Тебе нравиться рисовать?",
+    "question": "Тебе нравится рисовать?",
     "Python_Start_count": 1,
     "Game_Dev_count": 3,
     "Scratch_count": 2,
@@ -28,7 +28,7 @@ const database = [
   },
   {
     "id": 4,
-    "question": "Тебе нравиться решать задачи?",
+    "question": "Тебе нравится решать задачи?",
     "Python_Start_count": 1,
     "Game_Dev_count": -1,
     "Scratch_count": 1,
@@ -37,7 +37,7 @@ const database = [
   },
   {
     "id": 5,
-    "question": "Тебе нравиться играть в Minecraft?",
+    "question": "Тебе нравится играть в Minecraft?",
     "Python_Start_count": 7,
     "Game_Dev_count": 3,
     "Scratch_count": 2,
