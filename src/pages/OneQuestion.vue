@@ -20,7 +20,7 @@
           </svg>
         </div>
       </div>
-      <div class="buttons">
+      <div class="buttons" v-if="result == ''">
         <button @click="clickNo" class="button button-no">Нет</button>
         <button @click="clickEmpthy" class="button button-empthy">Не знаю</button>
         <button @click="clickYes" class="button button-yes">Да</button>
@@ -58,14 +58,14 @@ export default {
         this.python_start += database[this.number_of_question].Python_Start_count
         this.python_junior += database[this.number_of_question].Python_Junior_count
         this.scratch += database[this.number_of_question].Scratch_count
-        // this.gamedev += database[this.number_of_question].Game_Dev_count
+        this.gamedev += database[this.number_of_question].Game_Dev_count
         // this.comp_science += database[this.number_of_question].Comp_count
 
-        console.log("Python-Start: " + String(this.python_start))
-        console.log("Python-Junior: " + String(this.python_junior))
-        console.log("Scratch: " + String(this.scratch))
-        console.log("GameDev: " + String(this.gamedev))
-        console.log("Comp_Science: " + String(this.comp_science))
+        // console.log("Python-Start: " + String(this.python_start))
+        // console.log("Python-Junior: " + String(this.python_junior))
+        // console.log("Scratch: " + String(this.scratch))
+        // console.log("GameDev: " + String(this.gamedev))
+        // console.log("Comp_Science: " + String(this.comp_science))
 
 
         this.number_of_question += 1
@@ -73,7 +73,7 @@ export default {
       }
       else {
         const all_courses = [this.python_start, this.python_junior, this.scratch, this.gamedev, this.comp_science]
-        const all_courses_names = ["Python-Start", "Python-Junior", "Scratch", "GameDev", "Компьютерная грамотность"]
+        const all_courses_names = ["IT-Start", "IT-Adult", "IT-Junior", "GameDev", "Компьютерная грамотность"]
         this.question = "Вам больше всего подходит курс:"
         this.number_of_question = "∞"
         this.result = all_courses_names[all_courses.indexOf(Math.max(...all_courses))]
@@ -87,7 +87,7 @@ export default {
         this.python_start -= database[this.number_of_question].Python_Start_count
         this.python_junior -= database[this.number_of_question].Python_Junior_count
         this.scratch -= database[this.number_of_question].Scratch_count
-        // this.gamedev -= database[this.number_of_question].Game_Dev_count
+        this.gamedev -= database[this.number_of_question].Game_Dev_count
         // this.comp_science -= database[this.number_of_question].Comp_count
 
         console.log("Python-Start: " + String(this.python_start))
@@ -101,7 +101,7 @@ export default {
       }
       else {
         const all_courses = [this.python_start, this.python_junior, this.scratch, this.gamedev, this.comp_science]
-        const all_courses_names = ["Python-Start", "Python-Junior", "Scratch", "GameDev", "Компьютерная грамотность"]
+        const all_courses_names = ["IT-Start", "IT-Adult", "IT-Junior", "GameDev", "Компьютерная грамотность"]
         this.question = "Вам больше всего подходит курс:"
         this.number_of_question = "∞"
         this.result = all_courses_names[all_courses.indexOf(Math.max(...all_courses))]
@@ -158,6 +158,9 @@ export default {
   justify-content: center;
   background-color: #fff;
   border: 4px solid #000;
+  min-width: 400px;
+  width: 700px;
+  max-width: 90vw;
 }
 
 #number {
