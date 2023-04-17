@@ -99,6 +99,11 @@ import html2canvas from 'html2canvas';
 
 export default {
   name: 'result-page',
+  beforeMount() {
+    if (this.site || this.turtle) {
+      localStorage.setItem('course', 'IT-Start')
+    }
+  },
   data() {
     return {
       name: localStorage.getItem('name') ? localStorage.getItem('name') : '',
@@ -303,7 +308,7 @@ export default {
 
 .document-material {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 20px;
 }
 
