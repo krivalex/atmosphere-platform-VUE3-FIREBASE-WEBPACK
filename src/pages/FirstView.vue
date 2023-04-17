@@ -78,7 +78,6 @@ export default {
   padding: 20px;
   border-radius: 20px;
   border: 4px solid #000000;
-  width: 80vw;
 }
 
 .label {
@@ -119,5 +118,11 @@ export default {
   padding: 10px 40px;
   font-size: 30px;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    width: 80vw;
+  }
 }
 </style>
