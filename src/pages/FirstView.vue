@@ -59,7 +59,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 50px;
   position: relative;
   border: 1px solid #000000;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
@@ -79,6 +78,7 @@ export default {
   padding: 20px;
   border-radius: 20px;
   border: 4px solid #000000;
+  width: 80vw;
 }
 
 .label {

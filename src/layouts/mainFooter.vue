@@ -67,4 +67,14 @@ export default {
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 }
+
+@media screen and (max-width: 768px) {
+  .version2 {
+    font-size: 15px;
+  }
+
+  footer p {
+    display: none;
+  }
+}
 </style>
