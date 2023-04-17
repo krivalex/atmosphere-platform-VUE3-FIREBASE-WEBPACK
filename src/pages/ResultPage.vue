@@ -41,7 +41,7 @@
               </div>
               <div class="maked">
                 <p>Изучили материал</p>
-                <p v-if="test">Прошли профориентацию</p>
+                <p>Прошли профориентацию</p>
                 <p v-if="design3D">Попробовали 3D-графику</p>
                 <p v-if="turtle">Создали программу на Python</p>
                 <p v-if="scratch">Сделали игру</p>
@@ -76,6 +76,11 @@
               <p>Логическое мышление</p>
               <p class="description">(У ученика явно выделяются логические навыки - но не хватает навыков управления
                 компьютером, ему подходят курс IT-Junior )</p>
+            </div>
+            <div v-else>
+              <p>Нестандартное мышление</p>
+              <p class="description">(Мышление ученика нельзя определить алгоритмом, ученик отличается сильной
+                нестандартностью, ему подходит IT-Junior и IT-Start)</p>
             </div>
           </div>
         </div>
@@ -116,7 +121,7 @@ export default {
       site: localStorage.getItem('site') ? localStorage.getItem('site') : false,
       scratch: localStorage.getItem('scratch') ? localStorage.getItem('scratch') : false,
       figma: localStorage.getItem('figma') ? localStorage.getItem('figma') : false,
-      count: ['turtle', 'scratch', 'site', 'design3D', 'figma'].length,
+      count: ['turtle', 'scratch', 'site', 'design3D', 'figma'].map(item => localStorage.getItem(item)).filter(item => item).length,
     }
   },
   methods: {
