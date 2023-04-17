@@ -5,6 +5,7 @@ const TestCourse = () => import('@/pages/TestCourse.vue')
 const SiteTrial = () => import('@/pages/SiteTrial.vue')
 const MainPresent = () => import('@/pages/MainPresent.vue')
 const FirstView = () => import('@/pages/FirstView.vue')
+const Result = () => import('@/pages/ResultPage.vue')
 
 const routes = [
   {
@@ -31,6 +32,11 @@ const routes = [
     path: '/site',
     name: 'site',
     component: SiteTrial,
+  },
+  {
+    path: '/result',
+    name: 'result',
+    component: Result,
   },
 ]
 

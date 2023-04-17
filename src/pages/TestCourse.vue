@@ -20,9 +20,6 @@
               </g>
             </svg>
           </div>
-          <div class="next-stage" v-if="result !== ''">
-            <all-buttons></all-buttons>
-          </div>
         </div>
 
       </div>
@@ -37,7 +34,6 @@
 
 <script>
 import database from './data.js'
-import AllButtons from '@/components/AllButtons.vue';
 
 
 
@@ -51,13 +47,10 @@ export default {
       gamedev: 0,
       comp_science: 0,
 
-      question: database[0].question,
-      number_of_question: 0,
-      result: ''
+      question: localStorage.getItem('course') ? "Ваш курс:" : database[0].question,
+      number_of_question: localStorage.getItem('course') ? "∞" : 1,
+      result: localStorage.getItem('course') || ''
     }
-  },
-  components: {
-    AllButtons
   },
   methods: {
     clickYes() {
@@ -88,6 +81,7 @@ export default {
         this.result = all_courses_names[all_courses.indexOf(Math.max(...all_courses))]
         console.log(this.question)
         localStorage.setItem('course', this.result)
+        localStorage.setItem('question', this.question)
       }
     },
     clickNo() {
@@ -100,11 +94,11 @@ export default {
         this.gamedev -= database[this.number_of_question].Game_Dev_count
         // this.comp_science -= database[this.number_of_question].Comp_count
 
-        console.log("Python-Start: " + String(this.python_start))
-        console.log("Python-Junior: " + String(this.python_junior))
-        console.log("Scratch: " + String(this.scratch))
-        console.log("GameDev: " + String(this.gamedev))
-        console.log("Comp_Science: " + String(this.comp_science))
+        // console.log("Python-Start: " + String(this.python_start))
+        // console.log("Python-Junior: " + String(this.python_junior))
+        // console.log("Scratch: " + String(this.scratch))
+        // console.log("GameDev: " + String(this.gamedev))
+        // console.log("Comp_Science: " + String(this.comp_science))
 
         this.number_of_question += 1
         this.question = database[this.number_of_question].question
@@ -141,13 +135,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .question {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 85vh;
   width: 100vw;
   background-color: #ffffff;
   padding: 10px 20px;

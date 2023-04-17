@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
 #turtle {
-  height: 80vh;
+  height: 85vh;
   width: 100%;
   display: flex;
   justify-content: center;

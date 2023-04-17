@@ -1,12 +1,10 @@
 <template>
   <div id="app">
-    <div v-if="$route.name !== 'first-view'">
+    <div v-if="$route.name !== 'first-view' && $route.name !== 'result'">
       <main-navbar />
     </div>
-    <transition name="grotest" mode="out-in">
-      <router-view />
-    </transition>
-    <div v-if="$route.name !== 'first-view'">
+    <router-view />
+    <div v-if="$route.name !== 'first-view' && $route.name !== 'result'">
       <main-footer />
     </div>
   </div>
