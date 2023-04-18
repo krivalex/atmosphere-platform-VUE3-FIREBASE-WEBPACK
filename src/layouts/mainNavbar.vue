@@ -18,15 +18,15 @@
       <router-link class="link" id="site" to="/site" @click="addSite">
         <button class="btn third">Создать сайт</button>
       </router-link>
-      <div class="link" id="design3d" @click="design3D">
-        <button class="btn third">3D-дизайн</button>
-      </div>
-      <div class="link" id="scratch" @click="scratchOpen">
+      <router-link class="link" id="design3D" to="/design3D" @click="design3D">
+        <button class="btn third">3D дизайн</button>
+      </router-link>
+      <router-link class="link" id="scratch" to="/scratch" @click="scratchOpen">
         <button class="btn third">Scratch</button>
-      </div>
-      <div class="link" id="figma" @click="figmaOpen">
+      </router-link>
+      <router-link class="link" id="figma" to="/figma" @click="figmaOpen">
         <button class="btn third">Figma</button>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -36,15 +36,12 @@ export default {
   name: 'mainNavbar',
   methods: {
     design3D() {
-      window.open('https://www.tinkercad.com/join', '_blank');
       localStorage.setItem('design3D', true)
     },
     scratchOpen() {
-      window.open('https://scratch.mit.edu/projects/editor/', '_blank');
       localStorage.setItem('scratch', true)
     },
     figmaOpen() {
-      window.open('https://www.figma.com/?fuid=', '_blank');
       localStorage.setItem('figma', true)
     },
     addPresent() {

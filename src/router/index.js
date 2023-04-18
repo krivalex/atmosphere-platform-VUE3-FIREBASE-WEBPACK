@@ -6,6 +6,11 @@ const SiteTrial = () => import('@/pages/SiteTrial.vue')
 const MainPresent = () => import('@/pages/MainPresent.vue')
 const FirstView = () => import('@/pages/FirstView.vue')
 const Result = () => import('@/pages/ResultPage.vue')
+const Scratch = () => import('@/pages/ScratchPage.vue')
+const Design3D = () => import('@/pages/Design3D.vue')
+const Figma = () => import('@/pages/FigmaPage.vue')
+
+const NotFound = () => import('@/pages/NotFound.vue')
 
 const routes = [
   {
@@ -37,6 +42,26 @@ const routes = [
     path: '/result',
     name: 'result',
     component: Result,
+  },
+  {
+    path: '/scratch',
+    name: 'scratch',
+    component: Scratch,
+  },
+  {
+    path: '/design3D',
+    name: 'design3D',
+    component: Design3D,
+  },
+  {
+    path: '/figma',
+    name: 'figma',
+    component: Figma,
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: NotFound,
   },
 ]
 
