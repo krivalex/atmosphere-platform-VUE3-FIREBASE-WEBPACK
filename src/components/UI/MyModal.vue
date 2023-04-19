@@ -56,4 +56,15 @@ export default {
   right: 0;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .dialog-content {
+    padding: 10px;
+    max-width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
 </style>

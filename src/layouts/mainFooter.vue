@@ -52,7 +52,7 @@ export default {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin: 0 10px;
+  padding-right: 10px;
 }
 
 .footer button {

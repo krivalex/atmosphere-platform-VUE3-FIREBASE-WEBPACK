@@ -5,38 +5,15 @@
       <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="90%" height="90%"
         src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FGPbySHRrCghVYcFdfpeTk6%2F%25D0%259F%25D1%2580%25D0%25BE%25D0%25B1%25D0%25BD%25D1%258B%25D0%25B9-%25D1%2583%25D1%2580%25D0%25BE%25D0%25BA-%25231%3Fnode-id%3D0%253A1%26t%3D3wvbL7FuYfF1jrU8-1"
         allowfullscreen></iframe>
-      <button @click="showModel1">
-        Проект "Пейзаж"
+      <button @click="redirectToFigmaOne">
+        Рисовать
       </button>
     </div>
-    <my-modal v-model:show="model1">
-      <div class="all_modal">
-        <img class="logo" src="@/assets/white-logo.png" alt="logo" />
-        <img class="close-button" src="@/assets/close.png" @click="showModel1" alt="close" />
-
-        <div class="info">
-          <h1>Задание 1: </h1>
-          <ol>
-            <li>Открыть проект</li>
-            <li>Положить кирку маленькую тележку, а ящик в большую тележку</li>
-            <li>Экспортировать 3D</li>
-            <li>Открыть с помощью Paint 3D</li>
-          </ol>
-
-        </div>
-
-        <div class="add_action">
-          <button @click="redirectToFigmaOne" class="redirect_button">Перейти к заданию</button>
-        </div>
-      </div>
-
-    </my-modal>
 
   </section>
 </template>
 
 <script>
-import MyModal from '@/components/UI/MyModal.vue';
 export default {
   name: 'figma-page',
   methods: {
@@ -45,19 +22,31 @@ export default {
       localStorage.setItem('figma_design_1', true)
     },
   },
-  data() {
-    return {
-      model1: false,
+  unmounted() {
+    let timer_end = new Date().getTime();
+    this.timer = Number(this.timer)
+    if (this.timer === 0) {
+      localStorage.setItem('figma_timer', 0);
+    }
+    this.timer = this.timer + Number(timer_end) - Number(this.timer_start);
+    if (Number(localStorage.getItem('figma_timer')) >= Number(this.timer) || localStorage.getItem('figma_timer') == 0) {
+      localStorage.setItem('figma_timer', this.timer);
+    }
+    else {
+      localStorage.setItem('figma_timer', this.timer)
     }
   },
-  components: {
-    MyModal,
+  data() {
+    return {
+      timer_start: new Date().getTime(),
+      timer: localStorage.getItem('figma_timer') ? localStorage.getItem('figma_timer') : 0
+    };
   },
 }
 
 </script>
 
-<style>
+<style scoped>
 #content {
   display: flex;
   flex-direction: row;

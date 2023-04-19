@@ -1,31 +1,30 @@
 <template>
   <div class="navbar">
-    <h3 class="version">beta 1.7.2</h3>
+    <h3 class="version">beta 2.4.2</h3>
     <div class="label">
-      <h1 class="atmos">Atmosphere</h1>
-      <h1 class="atmos">Education</h1>
+      <img src="../assets/logo.png" alt="logo" class="nav-logo">
     </div>
     <div class="nav">
       <router-link class="link" to="/present" @click="addPresent">
-        <button class="btn third" id="present">Материал</button>
+        <button class="btn third" :class="{ active: $route.path === '/present' }" id="present">Материал</button>
       </router-link>
       <router-link class="link" id="test" to="/test" @click="addTest">
-        <button class="btn third">Тест</button>
+        <button :class="{ active: $route.path === '/test' }" class="btn third">Тест</button>
       </router-link>
       <router-link class="link" id="turtle" to="/turtle" @click="addTurtle">
-        <button class="btn third">Рисовать кодом</button>
+        <button :class="{ active: $route.path === '/turtle' }" class="btn third">Рисовать кодом</button>
       </router-link>
       <router-link class="link" id="site" to="/site" @click="addSite">
-        <button class="btn third">Создать сайт</button>
+        <button :class="{ active: $route.path === '/site' }" class="btn third">Создать сайт</button>
       </router-link>
       <router-link class="link" id="design3D" to="/design3D" @click="design3D">
-        <button class="btn third">3D дизайн</button>
+        <button :class="{ active: $route.path === '/design3D' }" class="btn third">3D дизайн</button>
       </router-link>
       <router-link class="link" id="scratch" to="/scratch" @click="scratchOpen">
-        <button class="btn third">Scratch</button>
+        <button :class="{ active: $route.path === '/scratch' }" class="btn third">Scratch</button>
       </router-link>
       <router-link class="link" id="figma" to="/figma" @click="figmaOpen">
-        <button class="btn third">Figma</button>
+        <button :class="{ active: $route.path === '/figma' }" class="btn third">Figma</button>
       </router-link>
     </div>
   </div>
@@ -86,6 +85,7 @@ export default {
   animation: bp 2s infinite linear;
   font-size: 25px;
   text-align: center;
+  margin: 0 5px;
 }
 
 @keyframes bp {
@@ -109,7 +109,7 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  margin: 5px;
+  padding-right: 10px;
 }
 
 .nav {
@@ -121,15 +121,9 @@ export default {
   height: 100%;
   padding: 0 30px;
   overflow: hidden;
+  margin-top: 15px;
 }
 
-.label {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
 
 .link {
   display: flex;
@@ -203,9 +197,18 @@ export default {
   color: black;
 }
 
+.nav-logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  height: 18vh;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 768px) {
   .navbar {
-    height: 100%;
     width: 100%;
     flex-direction: column;
     padding: 0;
@@ -235,9 +238,8 @@ export default {
 
 @media screen and (max-width: 1280px) {
   .navbar {
-    height: 100%;
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
     padding: 0;
   }
 
@@ -250,7 +252,11 @@ export default {
     padding: 20px 10px;
     overflow: scroll;
     width: 100%;
+  }
 
+  .nav-logo {
+    height: 12vh;
+    margin-top: 10px;
   }
 
   .link {
@@ -261,5 +267,13 @@ export default {
     margin: 10px 0;
   }
 
+}
+
+.active {
+  color: #ffffff;
+  border-color: #7a2eec;
+  box-shadow: 0 0 40px 40px #7a2eec inset, 0 0 0 0 #7a2eec;
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
 }
 </style>

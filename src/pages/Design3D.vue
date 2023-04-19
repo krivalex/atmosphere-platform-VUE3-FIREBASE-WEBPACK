@@ -103,6 +103,20 @@
 import MyModal from '@/components/UI/MyModal.vue';
 export default {
   name: 'design-3d',
+  unmounted() {
+    let timer_end = new Date().getTime();
+    this.timer = Number(this.timer)
+    if (this.timer === 0) {
+      localStorage.setItem('design3D_timer', 0);
+    }
+    this.timer = this.timer + Number(timer_end) - Number(this.timer_start);
+    if (Number(localStorage.getItem('design3D_timer')) >= Number(this.timer) || localStorage.getItem('design3D_timer') == 0) {
+      localStorage.setItem('design3D_timer', this.timer);
+    }
+    else {
+      localStorage.setItem('design3D_timer', this.timer)
+    }
+  },
   methods: {
     redirectToTinkerOne() {
       window.open('https://www.tinkercad.com/things/eGhtbkLNSqP', '_blank');
@@ -131,6 +145,8 @@ export default {
       model1: false,
       model2: false,
       model3: false,
+      timer: localStorage.getItem('design3D_timer') ? localStorage.getItem('design3D_timer') : 0,
+      timer_start: new Date().getTime(),
     }
   },
   components: {
@@ -140,7 +156,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 #content {
   display: flex;
   flex-direction: row;
@@ -149,7 +165,7 @@ export default {
   height: 85vh;
   width: 100%;
   padding: 0 10px;
-  background-color: #898888;
+  background-color: #e0e0e0;
 }
 
 .game {
@@ -230,6 +246,7 @@ export default {
   border: 0px;
   background-color: #fbd631;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .redirect_button:hover {
@@ -252,5 +269,41 @@ export default {
   left: 20px;
   transform: translateX(-50%);
   z-index: 1000;
+}
+
+@media screen and (max-width: 768px) {
+  #content {
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+  }
+
+  .game iframe {
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+
+  .all_modal {
+    width: 90%;
+  }
+
+  ol li {
+    font-size: 10px;
+  }
+
+  .logo {
+    top: -20px;
+  }
+
+  .info h1 {
+    margin-top: 15px
+  }
+
+  .redirect_button {
+    width: 100%;
+    font-size: 20px;
+  }
+
+
 }
 </style>

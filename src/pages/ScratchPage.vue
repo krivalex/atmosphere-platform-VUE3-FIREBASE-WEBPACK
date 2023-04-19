@@ -30,6 +30,20 @@
 <script>
 export default {
   name: 'scratch-page',
+  unmounted() {
+    let timer_end = new Date().getTime();
+    this.timer = Number(this.timer)
+    if (this.timer === 0) {
+      localStorage.setItem('scratch_timer', 0);
+    }
+    this.timer = this.timer + Number(timer_end) - Number(this.timer_start);
+    if (Number(localStorage.getItem('scratch_timer')) >= Number(this.timer) || localStorage.getItem('scratch_timer') == 0) {
+      localStorage.setItem('scratch_timer', this.timer);
+    }
+    else {
+      localStorage.setItem('scratch_timer', this.timer)
+    }
+  },
   methods: {
     redirectToScratchOne() {
       window.open('https://scratch.mit.edu/projects/719344926/editor/', '_blank');
@@ -43,7 +57,13 @@ export default {
       window.open('https://scratch.mit.edu/projects/837084242/editor/', '_blank');
       localStorage.setItem('scratch_game_3', true)
     }
-  }
+  },
+  data() {
+    return {
+      timer_start: new Date().getTime(),
+      timer: localStorage.getItem('scratch_timer') ? localStorage.getItem('scratch_timer') : 0
+    };
+  },
 }
 
 </script>
@@ -56,6 +76,7 @@ export default {
   justify-content: center;
   height: 85vh;
   width: 100%;
+  background-color: rgb(232, 237, 241);
 }
 
 .game {
@@ -88,5 +109,20 @@ export default {
   cursor: pointer;
   transition: 0.3s;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 768px) {
+  #content {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .game {
+    margin-bottom: 30px;
+  }
+
+  .game iframe {
+    width: 100%;
+  }
 }
 </style>
