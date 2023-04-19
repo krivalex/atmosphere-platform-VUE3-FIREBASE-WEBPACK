@@ -124,5 +124,9 @@ export default {
   .content {
     width: 80vw;
   }
+
+  video {
+    display: none
+  }
 }
 </style>
