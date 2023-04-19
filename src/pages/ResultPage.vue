@@ -34,28 +34,52 @@
           <div class="document-item">
             <h2 class="desc-label">На пробном уроке</h2>
             <div class="document-material">
-              <div class="document-number">
-                <div v-for="item in count + 2" :key="item" class="number">
-                  <p>{{ item }}.</p>
-                </div>
-              </div>
-              <div class="maked">
-                <p>Изучили материал</p>
-                <p>Прошли профориентацию</p>
 
-                <p v-if="turtle">Создали программу на Python</p>
-                <p v-if="site">Написали первый сайт</p>
-                <p v-if="scratch">Сделали игру</p>
-                <p v-if="scratch_game_1">Написали игру "Шарики"</p>
-                <p v-if="scratch_game_2">Написали игру "Змейка"</p>
-                <p v-if="scratch_game_3">Написали игру "Кошки-Мышки"</p>
-                <p v-if="design3D">Попробовали 3D-графику</p>
-                <p v-if="tinker_design_1">Выполнили задание "Стройка"</p>
-                <p v-if="tinker_design_2">Выполнили задание "Ендердракон"</p>
-                <p v-if="tinker_design_3">Выполнили задание "Арена"</p>
-                <p v-if="figma">Попробовали векторную графику</p>
-                <p v-if="figma_design_1">Выполнили задание "Пейзаж"</p>
-              </div>
+              <ol class="maked">
+                <li>
+                  Изучили материал
+                </li>
+                <li>
+                  Прошли профориентацию
+                </li>
+
+                <li v-if="turtle">
+                  Создали программу на Python
+                </li>
+                <li v-if="site">
+                  Написали первый сайт
+                </li>
+                <li v-if="scratch">
+                  Сделали игру
+                </li>
+                <li v-if="scratch_game_1">
+                  Написали игру "Шарики"
+                </li>
+                <li v-if="scratch_game_2">
+                  Написали игру "Змейка"
+                </li>
+                <li v-if="scratch_game_3">
+                  Написали игру "Кошки-Мышки"
+                </li>
+                <li v-if="design3D">
+                  Попробовали 3D-графику
+                </li>
+                <li v-if="tinker_design_1">
+                  Выполнили задание "Стройка"
+                </li>
+                <li v-if="tinker_design_2">
+                  Выполнили задание "Ендердракон"
+                </li>
+                <li v-if="tinker_design_3">
+                  Выполнили задание "Арена"
+                </li>
+                <li v-if="figma">
+                  Попробовали векторную графику
+                </li>
+                <li v-if="figma_design_1">
+                  Выполнили задание "Пейзаж"
+                </li>
+              </ol>
             </div>
 
 
@@ -186,8 +210,14 @@ export default {
     }
   },
   methods: {
+
+
     downloadDocument() {
-      const el = document.querySelector("#document");
+      // document.querySelector('#document').style.width = '633px';
+      // document.querySelector('#document').style.height = '1300px';
+
+      const el = document.querySelector("#document") // Устанавливаем ширину страницы 100%
+      // Отключаем мобильную адаптацию
 
       const pdf = new jsPDF();
 
@@ -212,12 +242,9 @@ export default {
 
         pdf.setFontSize(23);
         pdf.setTextColor(238, 130, 238);
-
-        pdf.textWithLink('Instagram', (pdf.internal.pageSize.getWidth() - 423 * 1 / 3), (pdf.internal.pageSize.getHeight() - 5), { align: 'center', url: 'https://www.instagram.com/atmosphere_it/' });
-
+        pdf.textWithLink('Instagram', (pdf.internal.pageSize.getWidth() - 400 * 1 / 3), (pdf.internal.pageSize.getHeight() - 5), { align: 'center', url: 'https://www.instagram.com/atmosphere_it/' });
         pdf.setFontSize(23);
         pdf.setTextColor(220, 83, 0);
-
         pdf.textWithLink('Site', (pdf.internal.pageSize.getWidth() * 2 / 3), (pdf.internal.pageSize.getHeight() - 5), { align: 'center', url: 'http://atmosphereit.kz/' });
 
 
@@ -395,6 +422,21 @@ export default {
   align-items: flex-start;
   flex-direction: column;
   height: 100%;
+  list-style-type: decimal;
+  /* Устанавливаем тип нумерации - десятичную */
+  list-style-position: inside;
+  padding: 0 20px;
+}
+
+.maked li {
+  margin-right: 10px;
+  text-align: left;
+}
+
+
+.maked li::marker {
+  color: #eb4d13;
+  font-size: 35px;
 }
 
 .number p {
@@ -460,7 +502,7 @@ video {
 
 @media screen and (max-width: 768px) {
   #home {
-    height: 2000px;
+    height: 2100px;
   }
 
   .label {
@@ -476,8 +518,9 @@ video {
     font-size: 35px;
   }
 
-  .maked p {
+  .maked li {
     font-size: 20px;
+    text-align: start;
   }
 
   .document-number {
@@ -493,6 +536,10 @@ video {
     margin-top: 15px;
   }
 
+  .maked li::marker {
+    color: #eb4d13;
+    font-size: 22px;
+  }
 
 
 }
