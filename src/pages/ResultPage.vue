@@ -514,6 +514,10 @@ video {
     margin-bottom: 20px;
   }
 
+  video {
+    display: none
+  }
+
   .desc-label {
     font-size: 35px;
   }
