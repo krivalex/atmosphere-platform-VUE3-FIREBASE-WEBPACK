@@ -12,6 +12,8 @@ const Figma = () => import('@/pages/FigmaPage.vue')
 
 const NotFound = () => import('@/pages/NotFound.vue')
 
+const AddToTrial = () => import('@/pages/AddToTrial.vue')
+
 const routes = [
   {
     path: '/',
@@ -62,6 +64,11 @@ const routes = [
     path: '/:pathMatch(.*)*',
     name: 'not-found',
     component: NotFound,
+  },
+  {
+    path: '/add-to-trial',
+    name: 'add-to-trial',
+    component: AddToTrial,
   },
 ]
 
