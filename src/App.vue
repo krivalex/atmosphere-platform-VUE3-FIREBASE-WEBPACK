@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div v-if="$route.name !== 'first-view' && $route.name !== 'result'">
+    <div v-if="$route.name !== 'first-view' && $route.name !== 'result' && $route.name !== 'add-to-trial'">
       <main-navbar />
     </div>
     <router-view />
-    <div v-if="$route.name !== 'first-view' && $route.name !== 'result'">
+    <div v-if="$route.name !== 'first-view' && $route.name !== 'result' && $route.name !== 'add-to-trial'">
       <main-footer />
     </div>
   </div>
