@@ -1,24 +1,15 @@
 # atmosphere_trial
 
-## Project setup
-```
-npm install
-```
+Полноценная платформа для проведения пробных уроков.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Встроены компиляторы - PYTHON, HTML, CSS, JS.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+На сайте подготовлены компиляторы и практика для FIGMA, SCRATCH и TKINTER 3D.
 
-### Lints and fixes files
-```
-npm run lint
-```
+На сайте раскиданы слушатели событий, кликов и времени - который считывают и в конце выдают результат - нужный курс, время проведенное на каждой странице. И выявляет к чему интереса было больше.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Компиляция DOM-дерева в PDF - на странице результатов.
+
+Desktop first верстка - мобильная адаптация тоже сделана.
+
+Полноценный и законченный продукт, который активно используется.
